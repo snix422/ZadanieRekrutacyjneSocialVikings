@@ -1,0 +1,16 @@
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-footer {
+    @include flexCenter();
+    margin-top: 20px;
+    width: 100vw;
+    height: 5vh;
+    background-color: rgb(192, 192, 192);
+    .app-footer__text {
+        font-family: $fontStyle;
+    }
+}

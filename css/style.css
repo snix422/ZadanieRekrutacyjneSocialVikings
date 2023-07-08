@@ -1,10 +1,10 @@
 .app-nav {
-  height: 8vh;
-  width: 100vw;
-  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 8vh;
+  width: 100vw;
+  background-color: black;
   position: relative;
 }
 .app-nav h3 {
@@ -22,6 +22,20 @@
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-family: "Montserrat";
+  font-size: 20px;
+  position: relative;
+}
+.app-nav .app-nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  width: 0%;
+  background-color: red;
+  border-radius: 5px;
+  height: 5px;
+  transition: 0.3s ease-in;
+  margin-top: 10px;
 }
 .app-nav .app-nav__button {
   position: absolute;
@@ -30,21 +44,38 @@
   height: 40px;
   font-family: "Montserrat";
   border-radius: 5px;
+  z-index: 5;
 }
 .app-nav .app-nav__burgerMenu {
   position: absolute;
-  right: 5%;
-  display: none;
+  right: 10%;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+.app-nav .app-nav__line {
+  width: 30px;
+  height: 7px;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 4px;
+  transition: all 0.3s;
+}
+
+.app-nav__link:hover::after {
+  width: 100%;
 }
 
 .app-content {
-  width: 100vw;
+  max-width: 100vw;
   min-height: 120vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 200px;
   padding-top: 50px;
+  overflow: hidden;
 }
 .app-content .app-content__article {
   width: 80vw;
@@ -106,13 +137,13 @@
 }
 
 .app-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
   width: 100vw;
   height: 5vh;
   background-color: rgb(192, 192, 192);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .app-footer .app-footer__text {
   font-family: "Montserrat";
@@ -146,14 +177,44 @@
   .app-content__item {
     min-width: 50vw;
   }
-  .app-nav__link {
-    display: none;
-  }
   .app-nav__button {
     display: none;
   }
-  .app-nav img {
+  .app-nav__burgerMenu {
     display: block;
+    transition: ease-in-out 0.3s;
+  }
+  .app-nav__links {
+    position: absolute;
+    right: 0;
+    top: 8vh;
+    background-color: rgb(111, 59, 141);
+    height: 92vh;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    margin-top: 0px;
+    transform: translate(100%);
+    transition: 0.3s all;
+  }
+  .active {
+    transform: translate(0%);
+  }
+  .app-nav__link {
+    font-size: 25px;
+    width: 80vw;
+    margin-left: -70px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .app-nav__burgerMenu.active .app-nav__line:first-child {
+    transform: translateY(-300px);
+  }
+  .app-nav__burgerMenu.active .app-nav__line:nth-child(2) {
+    transform: rotate(-405deg) translateY(8px);
+  }
+  .app-nav__burgerMenu.active .app-nav__line:nth-child(3) {
+    transform: rotate(-320deg) translateY(-8px);
   }
 }
 @media (max-width: 600px) {
@@ -163,6 +224,9 @@
   .app-content__article {
     margin-top: 100px;
     margin-bottom: -100px;
+  }
+  .app-nav__links {
+    width: 90%;
   }
 }
 @media (max-width: 500px) {

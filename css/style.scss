@@ -1,122 +1,6 @@
-$navTextColor: rgb(255, 255, 255);
-$fontSize: '40px';
-$fontStyle: 'Montserrat';
-$buttonTextWhite: 'white';
-.app-nav {
-    height: 8vh;
-    width: 100vw;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    h3 {
-        color: $navTextColor;
-        position: absolute;
-        left: 5%;
-        font-size: 30px;
-        font-family: $fontStyle;
-    }
-    .app-nav__links {
-        display: flex;
-        gap: 40px
-    }
-    .app-nav__link {
-        text-decoration: none;
-        color: $navTextColor;
-        font-family: $fontStyle;
-    }
-    .app-nav__button {
-        position: absolute;
-        right: 5%;
-        width: 150px;
-        height: 40px;
-        font-family: $fontStyle;
-        border-radius: 5px;
-    }
-}
-
-.app-content {
-    width: 100vw;
-    min-height: 120vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 200px;
-    padding-top: 50px;
-    .app-content__article {
-        width: 80vw;
-        height: 40vh;
-        display: flex;
-        .app-content__article-text {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            .app-content__headline {
-                font-size: 25px;
-                font-family: $fontStyle;
-            }
-            .app-content__text {
-                width: 90%;
-                font-family: $fontStyle;
-                text-align: center;
-            }
-        }
-        .app-content__aticle-img {
-            width: 50%;
-        }
-    }
-    .app-content__offer {
-        display: flex;
-        justify-content: space-around;
-        width: 100vw;
-        .app-content__item {
-            background-color: gray;
-            width: 15vw;
-            min-height: 300px;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0 20px 0;
-            .app-content__headline {
-                font-size: 25px;
-                font-family: $fontStyle;
-                font-style: bold;
-            }
-            .app-content__text {
-                width: 90%;
-                font-family: $fontStyle;
-                text-align: center;
-            }
-            .app-content__button {
-                width: 150px;
-                height: 40px;
-                font-family: $fontStyle;
-                color: white;
-                background-color: black;
-                border-radius: 10px;
-                outline: none;
-            }
-        }
-    }
-}
-
-.app-footer {
-    margin-top: 20px;
-    width: 100vw;
-    height: 5vh;
-    background-color: rgb(192, 192, 192);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .app-footer__text {
-        font-family: $fontStyle;
-    }
-}
-
+@import './nav';
+@import './content';
+@import './footer';
 @media (max-width:1300px) {
     .app-content__item {
         min-width: 25vw
@@ -146,11 +30,44 @@ $buttonTextWhite: 'white';
     .app-content__item {
         min-width: 50vw;
     }
-    .app-nav__link {
-        display: none;
-    }
     .app-nav__button {
         display: none;
+    }
+    .app-nav__burgerMenu {
+        display: block;
+        transition: ease-in-out 0.3s;
+    }
+    .app-nav__links {
+        position: absolute;
+        right: 0;
+        top: 8vh;
+        background-color: rgb(111, 59, 141);
+        height: 92vh;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        margin-top: 0px;
+        transform: translate(100%);
+        transition: 0.3s all;
+    }
+    .active {
+        transform: translate(0%);
+    }
+    .app-nav__link {
+        font-size: 25px;
+        width: 80vw;
+        margin-left: -70px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    .app-nav__burgerMenu.active .app-nav__line:first-child {
+        transform: translateY(-300px);
+    }
+    .app-nav__burgerMenu.active .app-nav__line:nth-child(2) {
+        transform: rotate(-405deg) translateY(8px)
+    }
+    .app-nav__burgerMenu.active .app-nav__line:nth-child(3) {
+        transform: rotate(-320deg) translateY(-8px)
     }
 }
 
@@ -161,6 +78,9 @@ $buttonTextWhite: 'white';
     .app-content__article {
         margin-top: 100px;
         margin-bottom: -100px;
+    }
+    .app-nav__links {
+        width: 90%;
     }
 }
 

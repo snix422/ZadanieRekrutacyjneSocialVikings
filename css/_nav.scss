@@ -1,0 +1,76 @@
+$navTextColor: rgb(255, 255, 255);
+$fontStyle: 'Montserrat';
+$buttonTextWhite: 'white';
+$fontSize: 20px;
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-nav {
+    @include flexCenter();
+    height: 8vh;
+    width: 100vw;
+    background-color: black;
+    position: relative;
+    h3 {
+        color: $navTextColor;
+        position: absolute;
+        left: 5%;
+        font-size: 30px;
+        font-family: $fontStyle;
+    }
+    .app-nav__links {
+        display: flex;
+        gap: 40px
+    }
+    .app-nav__link {
+        text-decoration: none;
+        color: $navTextColor;
+        font-family: $fontStyle;
+        font-size: $fontSize;
+        position: relative;
+    }
+    .app-nav__link::after {
+        content: '';
+        position: absolute;
+        bottom: -10%;
+        left: 0;
+        width: 0%;
+        background-color: red;
+        border-radius: 5px;
+        height: 5px;
+        transition: 0.3s ease-in;
+        margin-top: 10px;
+    }
+    .app-nav__button {
+        position: absolute;
+        right: 5%;
+        width: 150px;
+        height: 40px;
+        font-family: $fontStyle;
+        border-radius: 5px;
+        z-index: 5;
+    }
+    .app-nav__burgerMenu {
+        position: absolute;
+        right: 10%;
+        background: transparent;
+        outline: none;
+        cursor: pointer;
+        border: none;
+    }
+    .app-nav__line {
+        width: 30px;
+        height: 7px;
+        background-color: white;
+        border-radius: 20px;
+        margin-bottom: 4px;
+        transition: all 0.3s;
+    }
+}
+
+.app-nav__link:hover::after {
+    width: 100%;
+}
