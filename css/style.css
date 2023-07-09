@@ -233,6 +233,7 @@
     margin-left: -70px;
     text-align: center;
     letter-spacing: 1px;
+    margin-left: 5px;
   }
   .app-nav__burgerMenu.active .app-nav__line:first-child {
     transform: translateY(-300px);
