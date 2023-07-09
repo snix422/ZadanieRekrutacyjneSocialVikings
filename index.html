@@ -13,62 +13,66 @@
 </head>
 
 <body>
-    <header class="app-nav">
-        <h3 class="app-nav__logo">Logo</h3>
-        <ul class="app-nav__links">
-            <a href="#" class="app-nav__link">Link</a>
-            <a href="#" class="app-nav__link">Link</a>
-            <a href="#" class="app-nav__link">Link</a>
-            <a href="#" class="app-nav__link">Link</a>
-            <a href="#" class="app-nav__link">Link</a>
-        </ul>
-        <button class="app-nav__button">Button</button>
-        <button class="app-nav__burgerMenu">
-            <div class="app-nav__line"></div>
-            <div class="app-nav__line"></div>
-            <div class="app-nav__line"></div>
-        </button>
-    </header>
-    <main class="app-content">
-        <div class="app-content__article">
-            <div class="app-content__article-text">
-                <h2 class="app-content__headline">Loem ipsum dolor</h2>
-                <p class="app-content__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae veniam ullam nemo magnam, illum reiciendis id laboriosam? Est cum labore sequi natus sapiente? Modi esse, iure eos placeat consequatur praesentium?</p>
-            </div>
-            <img class="app-content__aticle-img" src="./assets/fire.jpg" />
+
+    <body>
+        <div class="layout">
+            <header class="app-nav">
+                <h3 class="app-nav__logo">Logo</h3>
+                <ul class="app-nav__links">
+                    <a href="#" class="app-nav__link">Link</a>
+                    <a href="#" class="app-nav__link">Link</a>
+                    <a href="#" class="app-nav__link">Link</a>
+                    <a href="#" class="app-nav__link">Link</a>
+                    <a href="#" class="app-nav__link">Link</a>
+                </ul>
+                <button class="app-nav__button">Button</button>
+                <button class="app-nav__burgerMenu">
+                <div class="app-nav__line"></div>
+                <div class="app-nav__line"></div>
+                <div class="app-nav__line"></div>
+            </button>
+            </header>
+            <main class="app-content">
+                <div class="app-content__article">
+                    <div class="app-content__article-text">
+                        <h2 class="app-content__headline">Loem ipsum dolor</h2>
+                        <p class="app-content__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae veniam ullam nemo magnam, illum reiciendis id laboriosam? Est cum labore sequi natus sapiente? Modi esse, iure eos placeat consequatur praesentium?</p>
+                    </div>
+                    <img class="app-content__aticle-img" src="./assets/fire.jpg" />
+                </div>
+                <div class="app-content__offer">
+                    <div class="app-content__item">
+                        <h2 class="app-content__headline">Lorem ipsum</h2>
+                        <p class="app-content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit quis ad debitis vero perferendis hic nam est quia, expedita atque molestiae aspernatur! Quo accusantium possimus fuga minus magni blanditiis dolorum!</p>
+                        <button class="app-content__button">Button</button>
+                    </div>
+                    <div class="app-content__item">
+                        <h2 class="app-content__headline">Lorem ipsum</h2>
+                        <p class="app-content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit quis ad debitis vero perferendis hic nam est quia, expedita atque molestiae aspernatur! Quo accusantium possimus fuga minus magni blanditiis dolorum!</p>
+                        <button class="app-content__button">Button</button>
+                    </div>
+                    <div class="app-content__item">
+                        <h2 class="app-content__headline">Lorem ipsum</h2>
+                        <p class="app-content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit quis ad debitis vero perferendis hic nam est quia, expedita atque molestiae aspernatur! Quo accusantium possimus fuga minus magni blanditiis dolorum!</p>
+                        <button class="app-content__button">Button</button>
+                    </div>
+                </div>
+            </main>
+            <footer class="app-footer">
+                <h5 class="app-footer__text">Lorem ipsum</h5>
+            </footer>
+
+            <script>
+                const mobileNav = document.querySelector('.app-nav__links');
+                const burgerBtn = document.querySelector('.app-nav__burgerMenu');
+
+                burgerBtn.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                    burgerBtn.classList.toggle('active');
+                })
+            </script>
         </div>
-        <div class="app-content__offer">
-            <div class="app-content__item">
-                <h2 class="app-content__headline">Lorem ipsum</h2>
-                <p class="app-content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit quis ad debitis vero perferendis hic nam est quia, expedita atque molestiae aspernatur! Quo accusantium possimus fuga minus magni blanditiis dolorum!</p>
-                <button class="app-content__button">Button</button>
-            </div>
-            <div class="app-content__item">
-                <h2 class="app-content__headline">Lorem ipsum</h2>
-                <p class="app-content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit quis ad debitis vero perferendis hic nam est quia, expedita atque molestiae aspernatur! Quo accusantium possimus fuga minus magni blanditiis dolorum!</p>
-                <button class="app-content__button">Button</button>
-            </div>
-            <div class="app-content__item">
-                <h2 class="app-content__headline">Lorem ipsum</h2>
-                <p class="app-content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit quis ad debitis vero perferendis hic nam est quia, expedita atque molestiae aspernatur! Quo accusantium possimus fuga minus magni blanditiis dolorum!</p>
-                <button class="app-content__button">Button</button>
-            </div>
-        </div>
-    </main>
-    <footer class="app-footer">
-        <h5 class="app-footer__text">Lorem ipsum</h5>
-    </footer>
+    </body>
 
-    <script>
-        const mobileNav = document.querySelector('.app-nav__links');
-        const burgerBtn = document.querySelector('.app-nav__burgerMenu');
 
-        burgerBtn.addEventListener('click', function() {
-            mobileNav.classList.toggle('active');
-            burgerBtn.classList.toggle('active');
-        })
-    </script>
-
-</body>
-
-</html>
+    <html>

@@ -11,7 +11,7 @@ $fontSize: 20px;
 .app-nav {
     @include flexCenter();
     height: 8vh;
-    width: 100vw;
+    width: 100%;
     background-color: black;
     position: relative;
     h3 {

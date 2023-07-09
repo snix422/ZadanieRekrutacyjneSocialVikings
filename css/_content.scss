@@ -39,18 +39,20 @@ $fontStyle: 'Montserrat';
         .app-content__item {
             background-color: gray;
             width: 15vw;
-            min-height: 300px;
             border-radius: 5px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 0 20px 0;
+            padding-bottom: 20px;
+            padding-top: 20px;
             .app-content__headline {
                 font-size: 25px;
                 font-family: $fontStyle;
                 font-style: bold;
+                margin-top: 10px;
             }
             .app-content__text {
+                margin-top: 10px;
                 width: 90%;
                 font-family: $fontStyle;
                 text-align: center;
@@ -64,6 +66,7 @@ $fontStyle: 'Montserrat';
                 border-radius: 10px;
                 border: none;
                 outline: none;
+                margin-top: 20px;
             }
         }
     }
